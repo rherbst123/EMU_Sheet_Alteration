@@ -11,7 +11,7 @@ idetaxon_file = os.path.join(input_folder, 'IdeTaxon.csv')
 
 # Process ColColle file
 print("Processing ColColle file...")
-colcolle_df = pd.read_csv(colcolle_file)
+colcolle_df = pd.read_csv(colcolle_file, low_memory=False)
 # Rename IRN columns in ColColle file
 rename_dict = {}
 for col in colcolle_df.columns:
@@ -38,7 +38,7 @@ colcolle_result = pd.DataFrame(colcolle_consolidated)
 
 # Process ecatalog file
 print("Processing ecatalog file...")
-ecatalog_df = pd.read_csv(ecatalog_file)
+ecatalog_df = pd.read_csv(ecatalog_file, low_memory=False)
 
 # Rename specific irn columns in ecatalog file by position
 # Column C (index 2) - rename to catalog_irn
@@ -65,7 +65,7 @@ if len(ecatalog_df.columns) > 28:  # Make sure we have enough columns
 
 # Process IdeTaxon file
 print("Processing IdeTaxon file...")
-idetaxon_df = pd.read_csv(idetaxon_file)
+idetaxon_df = pd.read_csv(idetaxon_file, low_memory=False)
 
 # Rename columns in IdeTaxon file
 # Column C (index 2) - rename to taxon_irn
