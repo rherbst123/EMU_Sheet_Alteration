@@ -118,7 +118,7 @@ if not output_name.endswith('.csv'):
     output_name += '.csv'
 
 desktop_path = os.path.expanduser("~/Desktop")
-output_folder = os.path.join(desktop_path, "Outputs")
+output_folder = os.path.join(desktop_path, "EMU_Combined_Sheets")
 os.makedirs(output_folder, exist_ok=True)
 
 output_file = os.path.join(output_folder, output_name)
